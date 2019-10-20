@@ -1,0 +1,16 @@
+AUI coding tips:
+1: Put the "aui_dev_priv_data dev_priv_data;" at the first line of device handle define.
+2: Add "aui_dev_reg(AUI_MODULE_DMX,pst_hdl_dmx);" at aui_xxx_open when successful open the device;
+3: Add "aui_dev_unreg(AUI_MODULE_DMX,pst_hdl_dmx);" at aui_xxx_close when successful close the device;
+4: Use unified err return "aui_rtn" or "aui_dgb_printf + return AUI_RTN_VAL()";
+5: Use "AUI_RTN_VAL" to get real return val,it usually be used to compare
+6: aui_dgb_printf for debug print
+7: keep the return val r same with the tds API, if TDS return value r not so accuracy, should notice the TDS pic to change it same time.
+8: use aui_handle_set_magic_num(aui_module_id dev_type_id,aui_hdl handle) to set handle magic num when open a device.
+   and use aui_handle_check(aui_hdl handle) at the begin of each API
+9: use AUI_ENTER_FUNC(MOD_NAME) at the begine of each API, and use AUI_LEAVE_FUNC(MOD_NAME) when return from API.
+
+AUI test unit coding tips:
+1: Static reg test command by add "g_st_nocs_cmd_node" 
+2: Call ali_sl_tu_pre_init(...) to init the test conditions in a test unit if necessary
+3: Call ali_sl_tu_pre_deinit to de init the test conditions in a test unit if necessary

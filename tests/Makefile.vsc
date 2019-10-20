@@ -1,0 +1,58 @@
+# BOARD_CFG_M3733 BOARD_CFG_M3823 BOARD_CFG_M3515
+#DEMO_BOARD = BOARD_CFG_M3733
+#DEMO_BOARD = BOARD_CFG_M3823
+DEMO_BOARD = BOARD_CFG_M3627
+ENABLE_SMK = 0
+
+#############  compiler configure  ############
+AUI_DIR_ROOT = ..
+ifeq ($(ENABLE_SMK),1)
+CFLAGS = -O1 -fPIC -fsigned-char -fno-inline-small-functions -Wall -Wextra -Werror -I$(AUI_DIR_ROOT)/inc \
+		-DAUI_LINUX -D_RD_DEBUG_ -D$(DEMO_BOARD) -DLNB_CFG_C_BAND -DENABLE_SMK
+
+LDFLAGS = -L$(AUI_DIR_ROOT)/output/linux -laui -lcfsmk
+endif
+ifeq ($(ENABLE_SMK),0)
+CFLAGS = -O1 -fPIC -fsigned-char -fno-inline-small-functions -Wall -Wextra -Werror -I$(AUI_DIR_ROOT)/inc \
+		-DAUI_LINUX -D_RD_DEBUG_ -D$(DEMO_BOARD) -DLNB_CFG_C_BAND
+
+LDFLAGS = -L$(AUI_DIR_ROOT)/output/linux -laui
+endif
+
+ifeq ($(DEMO_BOARD),BOARD_CFG_M3733)
+#CC = $(AUI_DIR_ROOT)/../../host/usr/bin/arm-none-linux-gnueabi-gcc
+endif
+ifeq ($(DEMO_BOARD),BOARD_CFG_M3823)
+#CC = $(AUI_DIR_ROOT)/../../host/usr/bin/mips-linux-gnu-gcc
+endif
+ifeq ($(DEMO_BOARD),BOARD_CFG_M3515)
+#CC = $(AUI_DIR_ROOT)/../../host/usr/bin/mips-linux-gnu-gcc
+endif
+ifeq ($(DEMO_BOARD),BOARD_CFG_M3627)
+#CC = $(AUI_DIR_ROOT)/../../host/usr/bin/mips-linux-gnu-gcc
+endif
+
+
+TAGERT = aui_conaxvsc_test aui_conaxvsc_playback_test aui_conaxvsc_record_test aui_conaxvsc_live_test aui_conaxvsc_live_record_test
+#AUI_OBJS := $(patsubst %.c,%.o,$(AUI_TEST_SRC))
+all: $(TAGERT)
+aui_conaxvsc_test:  aui_conaxvsc_test.c
+	$(CC) aui_conaxvsc_test.c $(CFLAGS) -lpthread $(LDFLAGS) -o $@
+aui_conaxvsc_playback_test:  aui_conaxvsc_playback_test.c
+	$(CC) aui_conaxvsc_playback_test.c $(CFLAGS) -lpthread $(LDFLAGS) -o $@
+aui_conaxvsc_record_test:  aui_conaxvsc_record_test.c
+	$(CC) aui_conaxvsc_record_test.c $(CFLAGS) -lpthread $(LDFLAGS) -o $@
+aui_conaxvsc_live_test:  aui_conaxvsc_live_test.c
+	$(CC) aui_conaxvsc_live_test.c $(CFLAGS) -lpthread $(LDFLAGS) -o $@
+	
+aui_conaxvsc_live_record_test:  aui_conaxvsc_live_record_test.c
+	$(CC) aui_conaxvsc_live_record_test.c $(CFLAGS) -lpthread $(LDFLAGS) -o $@
+
+.c.o: $<
+	$(CC) $(CFLAGS) -c $<
+
+.PHONY: all clean $(TAGERT)
+
+clean:
+	-rm -rf *.o
+	-rm -rf $(TAGERT)

@@ -1,0 +1,627 @@
+/**
+<!--
+This file lists all AUI Modules provided by AUI library
+
+Reading Notes:
+
+1) AUI_MOD_DEF(<module>, <level>) is to define AUI_<module> as AUI Module ID
+   with the default log level LOG_<level>
+
+2) SL_MOD(<module>) is to link the shared library module ALIPLF_<module> to
+   AUI Module ID as per the previous definition
+
+Current ALi author: Davy.Wu
+Last update:        2017.05.08
+-->
+*/
+
+/**
+Value to specify the <b> Common Module ID </b> with log level @b LOG_ERR set
+by default
+*/
+AUI_MOD_DEF(COMMON, ERR)
+
+/**
+Value to specify the <b> TDS OS Module ID </b> with log level @b LOG_ERR set
+by default
+
+
+@note   This module includes not only pure OS but also common part, such as
+        memory,timer,ring buffer and so on.
+*/
+AUI_MOD_DEF(OS, ERR)
+
+/**
+Value to specify the <b> File System (FS) Module ID </b> with log level
+@b LOG_ERR set by default
+
+@note This module is used only in TDS OS
+*/
+AUI_MOD_DEF(FS, ERR)
+
+/**
+Value to specify the <b> Audio/Video (AV) Module ID </b> with log level
+@b LOG_ERR set by default
+
+@note  The audio/video features involves the following modules:
+       - From @b AUI: DECV, DECA, AV_INJECTER
+       - From <b> Shared Library </b>: AVSYNC, VDEC
+*/
+AUI_MOD_DEF(AV, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI AV
+Module in Linux OS only. In particular:
+- DMX
+- VDEC
+- SND
+- AVSYNC
+- SBM
+- TSI
+- TSG
+- DSC
+
+@warning  The link is performed only in AUI LOG Module in Linux OS only
+-->
+*/
+SL_MOD(DMX)
+SL_MOD(VDEC)
+SL_MOD(SND)
+SL_MOD(AVSYNC)
+SL_MOD(SBM)
+SL_MOD(TSI)
+SL_MOD(TSG)
+SL_MOD(DSC)
+
+/**
+Value to specify the <b> Video Decoder (DECV) Module </b> with log level
+@b LOG_ERR set by default
+*/
+AUI_MOD_DEF(DECV, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI DECV
+Module in Linux OS only.In particular:
+- VDEC
+- AVSYNC
+
+@warning  The link is performed only in AUI LOG Module in Linux OS only
+-->
+*/
+SL_MOD(VDEC)
+SL_MOD(AVSYNC)
+
+/**
+Value to specify the <b> Audio Decoder (DECA) Module ID </b> with log level
+@b LOG_ERR set by default
+*/
+AUI_MOD_DEF(DECA, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI DECA
+Module in Linux OS only.In particular:
+- SND
+- AVSYNC
+
+@warning  The link is performed only in AUI LOG Module in Linux OS only
+-->
+*/
+SL_MOD(SND)
+SL_MOD(AVSYNC)
+
+/**
+Value to specify the <b> Sound (SND) Module ID </b> with log level @b LOG_ERR
+set by default
+*/
+AUI_MOD_DEF(SND, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI SND
+Module in Linux OS only.In particular:
+- SND
+
+@warning  The link is performed only in AUI LOG Module in Linux OS only
+-->
+*/
+SL_MOD(SND)
+
+/**
+Value to specify the <b> Personal Video Recorder (PVR) Module ID </b> with log
+level @b LOG_ERR set by default
+*/
+AUI_MOD_DEF(PVR, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI PVR
+Module in Linux OS only.In particular:
+- DMX
+- VDEC
+- SND
+- AVSYNC
+-->
+*/
+SL_MOD(DMX)
+SL_MOD(VDEC)
+SL_MOD(SND)
+SL_MOD(AVSYNC)
+
+/**
+Value to specify the <b> Conditional Access Personal Video Recorder (CA-PVR)
+Module ID </b> with log level @b LOG_ERR set by default
+*/
+AUI_MOD_DEF(CA_PVR, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI CA_PVR
+Module in Linux OS only.In particular:
+- DSC
+- CE
+-->
+*/
+SL_MOD(DSC)
+SL_MOD(CE)
+
+/**
+Value to specify the <b> De-Multiplexing (DMX) Module ID </b> with log level
+@b LOG_ERR set by default
+*/
+AUI_MOD_DEF(DMX, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI DMX
+Module in Linux OS only.In particular:
+- DMX
+-->
+*/
+SL_MOD(DMX)
+
+/**
+Value to specify the <b> On-Screen Display (OSD) & Graphic Module Module ID </b>
+with log level @b LOG_ERR set by default
+*/
+AUI_MOD_DEF(GFX, ERR)
+/**
+
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI GFX
+Module in Linux OS only.In particular:
+- DIS
+-->
+*/
+SL_MOD(DIS)
+
+/**
+Value to specify the <b> Transport Stream Generator (TSG) Module Module ID </b>
+with log level @b LOG_ERR set by default
+*/
+AUI_MOD_DEF(TSG, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI TSG
+Module in Linux OS only.In particular:
+- TSG
+-->
+*/
+SL_MOD(TSG)
+
+/**
+Value to specify the <b> Transport Stream Switch Interface (TSI) Module ID </b>
+with log level @b LOG_ERR set by default
+*/
+AUI_MOD_DEF(TSI, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI TSI
+Module in Linux OS only.In particular:
+- TSI
+-->
+*/
+SL_MOD(TSI)
+
+/**
+Value to specify the <b> Descrambler (DSC) Module ID </b> with log level @b LOG_ERR
+set by default
+*/
+AUI_MOD_DEF(DSC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI DSC Module
+in Linux OS only.In particular:
+- DSC
+-->
+*/
+SL_MOD(DSC)
+
+/**
+Value to specify the <b> Media Player (MP) Module ID </b> with log level @b LOG_ERR
+set by default
+*/
+AUI_MOD_DEF(MPLAY, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI MP Module
+in Linux OS only.In particular:
+- SBM
+-->
+*/
+SL_MOD(SBM)
+
+/**
+Value to specify the <b> MUSIC Module ID </b> with log level @b LOG_ERR set by
+default
+*/
+AUI_MOD_DEF(MUSIC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI MUSIC
+Module in Linux OS only.In particular:
+- SBM
+-->
+*/
+SL_MOD(SBM)
+
+/**
+Value to specify the <b> IMAGE Module ID </b> with log level @b LOG_ERR set by
+default
+*/
+AUI_MOD_DEF(IMAGE, ERR)
+
+/**
+Value to specify the <b> Panel Module ID </b> with log level @b LOG_ERR set by
+default
+*/
+AUI_MOD_DEF(PANEL, ERR)
+
+/**
+Value to specify the <b> Input Module ID </b> with log level @b LOG_ERR set by
+default
+*/
+AUI_MOD_DEF(INPUT, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI INPUT
+Module in Linux OS only.In particular:
+- INPUT
+-->
+*/
+SL_MOD(INPUT)
+
+/**
+Value to specify the <b> Smart Card (SMC) Module ID </b> with log level
+@b LOG_ERR set by default
+*/
+AUI_MOD_DEF(SMC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to
+AUI SMC Module
+in Linux OS only.In particular:
+- SMC
+-->
+*/
+SL_MOD(SMC)
+
+/**
+Value to specify the <b> Flash Memory (FLASH) Module </b> with log level @b LOG_ERR
+set by default
+*/
+AUI_MOD_DEF(FLASH, ERR)
+
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI FLASH
+Module in Linux OS only.In particular:
+- STORAGE
+-->
+*/
+SL_MOD(STORAGE)
+
+/**
+Value to specify the <b>  Universal Asynchronous Receiver/Transmitter (UART)
+Module ID </b> with log level @b LOG_ERR set by default
+*/
+AUI_MOD_DEF(UART, ERR)
+
+/**
+Value to specify the <b> Key Ladder (KL) Module ID </b> with log level @b LOG_ERR
+set by default
+*/
+AUI_MOD_DEF(KL, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI KL
+Module in Linux OS only.In particular:
+- CE
+-->
+*/
+SL_MOD(CE)
+
+/**
+Value to specify the <b> One-Time Program (OTP) Module ID </b> with log level
+@b LOG_ERR set by default
+*/
+AUI_MOD_DEF(OTP, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI KL
+Module in Linux OS only.In particular:
+- OTP
+-->
+*/
+SL_MOD(OTP)
+
+/**
+Value to specify the <b> Watchdog (DOG) Module ID </b> with log level @b LOG_ERR
+set by default
+*/
+AUI_MOD_DEF(DOG, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI DOG
+Module in Linux OS only.In particular:
+- Watchdog
+-->
+*/
+SL_MOD(WATCHDOG)
+
+/**
+Value to specify the <b> Real Time Clock (RTC) Module ID </b> with log level
+@b LOG_ERR set by default
+*/
+AUI_MOD_DEF(RTC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI RTC
+Module in Linux OS only.In particular:
+- STANDBY
+-->
+*/
+SL_MOD(PM)
+
+/**
+Value to specify the <b> Vertical Blanking Interval (VBI) Module ID  </b> with
+log level @b LOG_ERR
+*/
+AUI_MOD_DEF(VBI, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI VBI
+Module in Linux OS only.In particular:
+- VBI
+-->
+*/
+SL_MOD(VBI)
+
+/**
+Value to specify the <b> High-Definition Multimedia Interface (HDMI) Module ID </b>
+with log level @b LOG_ERR
+*/
+AUI_MOD_DEF(HDMI, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI HDMI
+Module in Linux OS only.In particular:
+- HDMI
+-->
+*/
+SL_MOD(HDMI)
+
+/**
+Value to specify the <b> Display (DIS) Module ID </b> with log level @b LOG_ERR
+*/
+AUI_MOD_DEF(DIS, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI DIS
+Module in Linux OS only.In particular:
+- DIS
+-->
+*/
+SL_MOD(DIS)
+
+/**
+Value to specify the <b> Net Interface (NIM) Module ID </b> with log level
+@b LOG_ERR
+*/
+AUI_MOD_DEF(NIM, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI NIM
+Module in Linux OS only.In particular:
+- NIM
+-->
+*/
+SL_MOD(NIM)
+
+/**
+Value to specify the <b> System Time Clock (STC) Module ID </b> with log level
+@b LOG_ERR
+*/
+AUI_MOD_DEF(STC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI STC
+Module in Linux OS only.In particular:
+- AVSYNC
+-->
+*/
+SL_MOD(AVSYNC)
+
+/**
+Value to specify the <b>  Common Interface Controller (CIC) Module ID </b> with
+log level @b LOG_ERR
+*/
+AUI_MOD_DEF(CIC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI CIC
+Module in Linux OS only.In particular:
+- CIC
+-->
+*/
+SL_MOD(CIC)
+
+/**
+Value to specify the <b> General Purpose Input/Output (GPIO) Module ID </b> with
+log level @b LOG_ERR
+*/
+AUI_MOD_DEF(GPIO, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI GPIO
+Module in Linux OS only.In particular:
+- GPIO
+-->
+*/
+SL_MOD(GPIO)
+
+/**
+Value to specify the <b> Inter-Integrated Circuit (I2C) Module ID </b> with
+log level @b LOG_ERR
+*/
+AUI_MOD_DEF(I2C, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI I2C
+Module in Linux OS only.In particular:
+- I2C
+-->
+*/
+SL_MOD(I2C)
+
+/**
+Value to specify the <b> Conax Virtual Smart Card (Conax VSC) Module ID </b> with
+log level @b LOG_ERR
+
+@note For CONAX's users @a only
+*/
+AUI_MOD_DEF(CONAXVSC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI CONAXVSC
+Module in Linux OS only.In particular:
+- CONAXVSC
+
+@note For CONAX's users @a only
+-->
+*/
+SL_MOD(CONAXVSC)
+
+/**
+Value to specify the <b> Verimatrix Advanced Security (VMX) Module ID </b> with
+log level @b LOG_ERR
+
+@note For Verimatrix's users @a only
+*/
+AUI_MOD_DEF(VMX, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI VMX
+Module in Linux OS only.In particular:
+- DSC
+
+@note For Verimatrix's users @a only
+-->
+*/
+SL_MOD(DSC)
+
+/**
+Value to specify the <b> True Random Number Generator (TRNG) Module ID </b> with
+log level @b LOG_ERR
+*/
+AUI_MOD_DEF(TRNG, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI TRNG
+Module in Linux OS only.In particular:
+- TRNG
+-->
+*/
+SL_MOD(TRNG)
+
+/**
+Value to specify the <b> Miscellaneous (MISC) Module ID </b> with
+log level @b LOG_ERR
+*/
+AUI_MOD_DEF(MISC, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI MISC
+Module in Linux OS only.In particular:
+- EVENT
+- DB
+- SYSINFO
+- SOC
+-->
+*/
+SL_MOD(EVENT)
+SL_MOD(DB)
+SL_MOD(SYSINFO)
+SL_MOD(SOC)
+SL_MOD(PM)
+
+/**
+Value to specify the <b> Audio/Video Injection (AV-Injection) Module </b> with
+log level @b LOG_ERR
+*/
+AUI_MOD_DEF(AV_INJECT, ERR)
+
+/**
+<!--
+Values list to specify which ALi Platform Modules need to be linked to AUI AV-Injection
+Module in Linux OS only.In particular:
+- VDEC
+- SND
+- AVSYNC
+-->
+*/
+SL_MOD(VDEC)
+SL_MOD(SND)
+SL_MOD(AVSYNC)
+
+/**
+Value to specify the <b> Video Injection (AV-Injection) Module ID </b> which log
+level @b LOG_ERR is defined by the value <b> AUI_MOD_DEF(AV_INJECT, ERR) </b>
+*/
+AUI_MOD_DEF(AV_INJECT_VIDEO, ERR)
+
+/**
+Value to specify the <b> Audio Injection (AV-Injection) Module ID </b> which log
+level @b LOG_ERR is defined by the value <b> AUI_MOD_DEF(AV_INJECT, ERR) </b>
+*/
+AUI_MOD_DEF(AV_INJECT_AUDIO, ERR)
+
+/** <!-- END OF FILE --> */
+
+

@@ -1,0 +1,50 @@
+1 ap_section and ap_stream have been put under /usr/bin.
+# ls /usr/bin/ap_*
+/usr/bin/ap_section  /usr/bin/ap_stream
+
+2 ap_stream is used to play av stream. When you run ap_stream with wrong parameter, 
+it will wrong tips and show information for you to input right parameter sequence.
+
+# ap_stream 
+Error parameters !
+parameters for DVBS and DVBC(QAM256):
+      [nim_id] [nim_type] [freq] [symb] [vpid] [apid] [ppid] [video format] [audio format] [dis format]
+DVBS :    1        0       3840   27500   513    660   8190        0              1            0       
+DVBC :    0        1       55400  6875    851    852   851         1              3            0       
+parameters for DVBT:
+      [nim_id] [nim_type] [freq] [bandwidth] [vpid] [apid] [ppid] [video format] [audio format] [dis format] [DVBT type]
+DVBT :    0        2      554000      8        821    822   821         1              3            0             0   
+
+Once ap_stream running, it won`t stop until you kill it.
+
+3 ap_section is used to get section table data. You can run ap_stream -h and know how to use this app.
+
+# ap_section -h
+Uasage ap_section [n:f:s:d:V:A:v:a:p:t:h]
+
+Command line options
+
+        -n --nim <nim_id>        //default is 1
+        -t --tnim <nim_type>     //default is 0
+        -d --dvbt <DVBT type>    //default is 0 
+        -f --freq <frequency>    //default is 3840
+        -s --sym <symbole_rate>  //default is 27500
+        -b --band <dvbt_band>    //default is 0
+        -d --dmx <dmx_id>        //default is 0
+        -V --vtype <video_type>  //default is 0(MPEG2)
+        -A --atype <audio_type>  //default is 1(MPEG2)
+        -v --vpid <video_pid>    //default is 513
+        -a --apid <audio_pid>    //default is 660
+        -p --ppid <pcr_pid>      //default is 8190
+        -c --spid <section_pid>  //default section_pid is 0
+        -l -- <life>             //default is 0, means running forever
+        -h --help
+        e.g. for dvbs: ap_section -n 0 -t 0 -f 3840 -s 27500 -d 0 -V 0 -A 1 -v 513 -a 660 -p 8190 -c 0 -l 10
+        
+4 For example to play cctv-2.
+ap_stream 1 0 3840 27500 513 660 8190 0 1 0 &
+
+run ap_section to get PMT 
+ap_section -c 258 &
+
+            

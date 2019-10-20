@@ -1,0 +1,12 @@
+1. edit samples/Makefile 
+	add your test source file in the AUI_SRC list.
+
+2. edit samples/aui_test_app_cmd
+	register your test case in the cg_st_nocs_cmd_node array.
+
+3. goto aui/ folder
+
+4. run following command to build the testing program.
+	./build.sh linux aui
+	./build.sh linux libaui_test
+	./build.sh linux aui_test

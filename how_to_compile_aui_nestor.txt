@@ -1,0 +1,10 @@
+how to compile aui nestor?
+
+1.obey the file in:aui_demo/How_To_Compile_xxxxx.txt, but don't start to compile;
+
+2.modified the file:aui_demo/compiler_XXXX.def, let it:#_AUI_NESTOR_ = 1 -> _AUI_NESTOR_ = 1;
+
+3.sync the folder named patch, you can get it by:git clone git@zhsa01:ibu-sdk/tds/tds-build.git, git pull,
+
+4.then you start to compile obey the file How_To_Comile_XXXXXXX.txt;
+

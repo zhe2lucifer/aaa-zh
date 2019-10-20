@@ -1,0 +1,128 @@
+/**
+<!--
+The comment below contains only HTML code used by Doxygen Tool to create the "Preface" page in the .chm file
+-->
+
+@mainpage Preface
+
+@htmlonly
+<td colspan="2"><h2 class="groupheader"> Welcome </h2></td>
+Here is <strong> ALi AUI API User Guide </strong>, a HTML Help File (.chm) created and provided by <strong>ALi&reg; Corporation </strong>
+for the convenience of ALi users during the own software development activity.
+
+<td colspan="2"><h2 class="groupheader"> Mission of the document </h2></td>
+This document is the user guide of all <strong> ALi AUI APIs </strong> which are forming the <strong> ALi AUI Interface </strong> as <i> glue layer </i> between ALi drivers and the high level middleware/application layer developed by ALi customers/partners.<br>
+Users can port the own middleware/application layer on different ALi platform regardless of the underlying operating system (i.e. <strong> TDS </strong> and <strong> Linux OS </strong>) and ALi chipset of the targeted ALi board.
+
+<td colspan="2"><h2 class="groupheader"> Reference to/from other ALi document </h2></td>
+This document can be considered as an attachment of other ALi document which mention it to go ahead with some software development procedures for different ALi boards. In particular user can refer it while reading the following ALi documents:
+<o:p></o:p></span></p>
+<ul><li><strong><i>ALi_AUI_Porting_Guide_Overview_&amp;_Setup.pdf</i></strong></li></ul>
+<ul><li><strong><i>ALi_AUI_Porting_Guide_Modules.pdf</i></strong></li></ul>
+<ul><li><strong><i>ALi_AUI_Porting_Guide_Application_Use_Cases.pdf</i></strong></li></ul>
+
+The below figure provides a holistic view of the relationship between ALi document just mentioned:</p>
+<p class="MsoNoSpacing" style="line-height: 115%; text-align: center;"><img style="width: 500px; height: 336px;" alt="" src="Document_Reference.png"></p>
+
+Please keep them <i style="">on hand</i> to take a look when will be necessary in order to have a full understanding of this document.
+
+<td colspan="2"><h2 class="groupheader"> Structure of the document </h2></td>
+This document consists of different <strong> HTML pages </strong> containing detailed information about all
+<ul><li><strong><i> Defines </i></strong></li></ul>
+<ul><li><strong><i> Enumerations </i></strong></li></ul>
+<ul><li><strong><i> Functions (APIs) </i></strong></li></ul>
+<ul><li><strong><i> Typedefs </i></strong></li></ul>
+<ul><li><strong><i> Structures </i></strong></li></ul>
+
+defined/declared in the header files of the supported <strong> ALi AUI Modules </strong> which are forming the <strong> ALi AUI Interface </strong>.
+Below the alphabetical list of all provided and documented <strong> ALi AUI API Header Files </strong>:
+
+<o:p></o:p></span></p>
+<ul><li><strong><i>aui_av.h</i></strong> - Audio/Video (AV) Injecter Module</li></ul>
+<ul><li><strong><i>aui_av_injecter.h</i></strong> - Audio/Video (AV) Injecter Module</li></ul>
+<ul><li><strong><i>aui_ca_pvr.h</i></strong> - Conditional Access Personal Video Recorder </li></ul>
+<ul><li><strong><i>aui_cic.h</i></strong> - Common Interface Controller (CIC) Module </li></ul>
+<ul><li><strong><i>aui_common.h</i></strong> - Common Module </li></ul>
+<ul><li><strong><i>aui_common_list.h</i></strong></font> - Common Function List Module </li></ul>
+<ul><li><strong><i>aui_conaxvsc.h</i></strong></font> - Conax Virtual Smart Card (Conax VSC) Module (for CONAX's users only) </li></ul> 
+<ul><li><strong><i>aui_deca.h</i></strong> - Audio Decoder (DECA) Module</li></ul>
+<ul><li><strong><i>aui_decv.h</i></strong> - Video Decoder (DECV) Module</li></ul>
+<ul><li><strong><i>aui_dis.h</i></strong> - Display Engine (DIS) Module</li></ul>
+<ul><li><strong><i>aui_dmx.h</i></strong> - Demultiplexer (DMX) Module</li></ul>
+<ul><li><strong><i>aui_dog.h</i></strong> - Watchdog (DOG) Module</li></ul>
+<ul><li><strong><i>aui_dsc.h</i></strong> - Descrambler (DSC) Module</li></ul>
+<ul><li><strong><i>aui_errno_stb.h</i></strong> - Set-Top Box Errors Module </li></ul>
+<ul><li><strong><i>aui_errno_sys.h</i></strong> - System Errors Module </li></ul>
+<ul><li><strong><i>aui_flash.h</i></strong> - Flash Memory Module</li></ul>
+<ul><li><strong><i>aui_fs.h</i></strong> - File System (FS) Module </li></ul>
+<ul><li><strong><i>aui_gpio.h</i></strong> - General Purpose Input/Output Module </li></ul>
+<ul><li><strong><i>aui_hdmi.h</i></strong> - High-Definition Multimedia Interface (HDMI) Module</li></ul>
+<ul><li><strong><i>aui_image.h</i></strong> - Image/Picture Module </li></ul>
+<ul><li><strong><i>aui_input.h</i></strong> - Input Module</li></ul>
+<ul><li><strong><i>aui_i2c.h</i></strong> - Inter-Integrated Circuit (I2C) Module</li></ul>
+<ul><li><strong><i>aui_kl.h</i></strong> - Key Ladder (KL) Module</li></ul>
+<ul><li><strong><i>aui_misc.h</i></strong> - Miscellaneous Module </li></ul>
+<ul><li><strong><i>aui_mp.h</i></strong> - Media Player (MP) Module</li></ul>
+<ul><li><strong><i>aui_music.h</i></strong> - Music Module </li></ul>
+<ul><li><strong><i>aui_nim.h</i></strong> - Net Interface Module (NIM) </li></ul>
+<ul><li><strong><i>aui_os.h</i></strong> - Operating System (OS) Module (only for TDS OS)</li></ul>
+<ul><li><strong><i>aui_osd.h</i></strong> - On-screen Display (OSD) & Graphic Module</li></ul>
+<ul><li><strong><i>aui_otp.h</i></strong> - One Time Program (OTP) Module </li></ul>
+<ul><li><strong><i>aui_panel.h</i></strong> - Panel Module</li></ul>
+<ul><li><strong><i>aui_pvr.h</i></strong> - Personal Video Recorder (PVR) Module</li></ul>
+<ul><li><strong><i>aui_rtc.h</i></strong> - Real Time Clock (RTC) Module</li></ul>
+<ul><li><strong><i>aui_smc.h</i></strong> - Smart Card (SMC) Module</li></ul>
+<ul><li><strong><i>aui_snd.h</i></strong> - Sound (SND) Module</li></ul>
+<ul><li><strong><i>aui_stc.h</i></strong> - System Time Clock Module </li></ul>
+<ul><li><strong><i>aui_trng.h</i></strong> - True Random Number Generator (TRNG) Module </li></ul>
+<ul><li><strong><i>aui_tsg.h</i></strong> - Transport Stream Generator (TSG) Module</li></ul>
+<ul><li><strong><i>aui_tsi.h</i></strong> - Transport Stream Switch Interface (Module)</li></ul>
+<ul><li><strong><i>aui_uart.h</i></strong> - Universal Asynchronous Receiver/Transmitter (UART) Module</li></ul>
+<ul><li><strong><i>aui_vbi.h</i></strong> - Vertical Blanking Interval (VBI) Module </li></ul>
+<ul><li><strong><i>aui_vmx.h</i></strong> - Verimatrix Advanced Security (VMX) Module (for Verimatrix's users only) </li></ul>
+
+<br>
+<strong>Note 1</strong><br>
+Most of the header files above have an own detailed description in the ALi document
+<ul><li><strong><i>ALi_AUI_Porting_Guide_Modules.pdf</i></strong></li></ul>
+please refer it for more clarifications. About other files without a own detailed description, it should be provided in the future, please contact <strong> ALi R&D Dept.</strong> for further updates and/or clarifications.<br><br>
+
+<strong>Note 2</strong><br>
+As the source code of <strong> ALi AUI Interface </strong> is continuously under improvement, the header files above might change frequently over the time then is recommended to keep contact with <strong> ALi R&D Dept. </strong> to always make sure to have the newest version of this document.  
+ 
+<td colspan="2"><h2 class="groupheader"> Target audience of the document </h2></td>
+This document is mainly intended to <b style="">DDK Customers</b>, and of course the reading is mainly applicable for <strong>Project Manager</strong>, <strong>Architects</strong>, <strong>Programmers</strong>, <strong>System Integrators</strong>
+with a solid background in <strong>C Programming</strong>, <strong>TDS</strong> and <strong>Linux OS</strong> , <strong>Embedded System </strong>(particularly <strong>Set-Top-Box (STB)</strong>), <strong>Media Broadcasting </strong>(particularly <strong> DVB, ATSC, ISDB</strong>)
+
+<td colspan="2"><h2 class="groupheader"> Acknowledgement </h2></td>
+Third-party brands and names mentioned in this document are for identification purpose only, and may be the property of their respective owners, in particular:
+<o:p></o:p></span></strong></p> <ul><li><strong>Microsoft &reg;</strong><strong> Windows &reg; </strong> are registered trademarks of <strong> Microsoft Corporation</strong> in the United States of America and other countries<br></li></ul>
+<o:p></o:p></span></strong><ul><li><strong>Linux &reg;</strong><strong><span style="font-weight: normal;"> is a registered trademark of </span>Linus Torvalds</strong><strong><span style="font-weight: normal;"></span></strong><br></li></ul>
+
+<strong><span style="font-weight: normal;"><o:p></o:p>Supply of this implementation of </span>Microsoft Corporation</strong><strong><span style="font-weight: normal;"> and </span>Linus Torvalds</strong><strong><span style="font-weight: normal;"> does not convey a license nor imply a right under any patent, or any other industrial or intellectual property right of </span>Microsoft Corporation</strong><strong><span style="font-weight: normal;"> and </span>Linus Torvalds</strong><strong><span style="font-weight: normal;">, to use this implementation in any finished end-user or ready-to-use final product.<br><br></span></strong>
+<strong><span style="font-weight: normal;">Besides it is hereby notified that a license for such use is required from </span>Microsoft Corporation</strong><strong><span style="font-weight: normal;"> and </span>Linus Torvalds, </strong><strong><span style="font-weight: normal;">and the customer is responsible to apply for that.</span></strong><br>
+<strong><span style="font-weight: normal;"></span></strong>
+
+<td colspan="2"><h2 class="groupheader"> Disclaimer notice </h2></td>
+<o:p></o:p></span></strong><strong></strong><strong>ALi &reg; Corporation</strong><strong><span style="font-weight: normal;">releases no license, whether express, implied, arising by estoppel or otherwise, of any intellectual property right is granted by this document.<o:p> <br>
+</o:p></span></strong></p><p class="MsoNoSpacing" style="text-align: justify; line-height: 115%;"><strong><span style="font-weight: normal;"><o:p></o:p></span></strong><strong></strong><strong>ALi &reg; Corporation</strong><strong><span style="font-weight: normal;"> makes no representations or warranties with respect to the accuracy or completeness of the contents of this document.</span></strong></p>
+<p class="MsoNoSpacing" style="text-align: justify; line-height: 115%;"><strong><span style="font-weight: normal;"></span></strong><strong><span style="font-family: Wingdings; font-weight: normal;"><span style=""></span></span></strong><strong> ALi &reg; Corporation</strong><strong><span style="font-weight: normal;"> reserves the right to discontinue or make changes to specifications and product descriptions at any time without notice.</span></strong></p>
+<p class="MsoNoSpacing" style="text-align: justify; line-height: 115%;"><strong><span style="font-weight: normal;"></span></strong><strong><o:p></o:p></strong><span style="font-family: Wingdings;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;"> </span></span></span>
+<strong>ALi &reg; Corporation</strong><strong><span style="font-weight: normal;"> </span></strong>assumes no liability for any damages or consequences resulting from the use of this document.</p>
+<p class="MsoNoSpacing" style="text-align: justify; line-height: 115%;"><strong><span style="font-weight: normal;"><o:p></o:p></span><span style="font-family: Wingdings; font-weight: normal;"><span style=""><span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;"> </span></span></span></strong>
+<strong><span style="font-weight: normal;"><span style="font-weight: bold;"></span>Please contact the local sales office to obtain the latest specifications and product descriptions as well as more details before placing any order.</span></strong></p>
+
+<td colspan="2"><h2 class="groupheader"> Copyright notice </h2></td>
+<p class="MsoNoSpacing" style="text-align: justify; line-height: 115%;"><b style=""> Copyright &copy; 2015 ALi &reg; Corporation.</b> <strong>All Rights Reserved</strong>.</p>
+No part of this document may be reproduced, distributed, transmitted in any form or by any means, including photocopying, recording and other electronic or mechanical methods, without the prior written permission of <strong>ALi &reg; Corporation</strong>, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.</p>
+
+<td colspan="2"><h2 class="groupheader"> Visit us </h2></td>
+
+Surf on our website below...
+
+<iframe width="100%" height="923" src="http://www.alitech.com"> </iframe>
+
+</html>
+
+@endhtmlonly
+*/

@@ -1,0 +1,52 @@
+
+ALi AUI library environment setup 
+---------------------------------
+
+AUI files structure:
+.
+|-- aui.cfg  : environment configuration
+|-- build
+|    |-- config.mk   : paths definition
+|    |-- rules.mk    : makefile rules
+|    |-- build.mk    : compiler with CFLAGS definition
+|-- src
+|    |-- linux    : AUI linux source code
+|    |-- tds      : AUI TDS source code
+|-- samples       : AUI samples codes (aui_test application)
+|-- lib
+|    `-- linux
+|          |--sharelib-src  : ALI share library source code
+|          `--sharelib      : ALI share library installation directory
+`-- nestor
+      |-- targetapp         : AUI testbench running on target
+      |-- inc               : AUI test API definition
+      `-- hostapp           : TCL scripts running on host
+            `-- tcl_wrapper
+
+aui.cfg defines
+- the BOARD_CFG which can M3733 or M3515,
+- the LNB_CFG which can be either C_BAND or KU_BAND (only applicable for DVB-S)
+- the PLATFORM which can be either LINUX or TDS,
+- the CPU_TYPE which can be either MIPS or ARM,
+- the COMPILER_ROOT which defines the location of the compiler,
+- ALI_LIB_INSTALL which defines the location of the libraries in the rootfs,
+- ALI_APP_INSTALL which defined the location where the application are copied.
+
+build/build.mk defined the compiler, CFLAGS and for linux the HOST.
+build/config.mk defined the required directory paths
+
+In the root Makefile, SUBDIRS lists the directories to compile.
+It contains the following build commands:
+- make          : compile everything (sharelib if binary not present, src, samples, nestor if present)
+- make help     : show makefile targets
+- make dist     : generate distribution package
+- make sharelib : compile sharelib even if libraries is already present (only if source code is present)
+- make nestor   : compile nestor if present
+- make clean    : clean all directories
+
+If sharelib binary (lib/libaliplatform.so) is not present in lib/linux/sharelib then
+sharelib source code is taken from git repository in lib/linux/sharelib-src and installed.
+
+Sharelib is a shared library which means the application using it requires to have access to all
+sharelib binary at runtime. Sharelib binaries are installed in lib/linux/sharelib.
+For the application to access it, these binaries are copied to ALI_LIB_INSTALL.
